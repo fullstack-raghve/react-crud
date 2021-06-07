@@ -1,0 +1,41 @@
+1.npx json-server --watch -p 3333 db.json
+2.import {  Link,NavLink } from "react-router-dom";
+3.import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+4.npm install axios
+5.import axios from 'axios';
+6.import { useHistory } from "react-router-dom";
+
+7.  const [user, setUser] = useState({
+    name: "",
+    username: "",
+    email: "",  
+    phone: "",
+    website: ""
+  });
+  const {name,username,email,phone,website} = user;
+
+8.  const onInputChange = e =>{
+      setUser({...user,[e.target.name]:e.target.value})
+       
+     console.log('target input',e.target.value) 
+  }
+
+9.  let history = useHistory();
+
+10.const onSubmit = async e => {
+    e.preventDefault();
+await axios.post("http://localhost:3333/users",user);
+history.push("/");
+}
+
+
+11.///load user here 
+const loadUser = async() =>{
+  const result =   await axios.get("http://localhost:3333/users/"+id);
+  console.log('view user',result)
+  setUser(result.data)
+}
+///
+
+
+

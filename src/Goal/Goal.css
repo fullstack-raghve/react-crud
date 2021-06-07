@@ -1,0 +1,16 @@
+p{
+    color: #ffffff;
+    font-size: 16px;
+}
+.list-item{
+    border: 1px solid red;
+    width: 500px;
+    margin: 0px auto;
+    padding: 10px;
+    background: #000;
+    cursor: pointer;
+}
+.from-group{
+    width: 500px;
+    margin: 0px auto;
+}   
